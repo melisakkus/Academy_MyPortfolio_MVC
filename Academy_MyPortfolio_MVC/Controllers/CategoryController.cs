@@ -9,29 +9,28 @@ namespace Academy_MyPortfolio_MVC.Controllers
 {
     public class CategoryController : Controller
     {
-
         //kategorileri listelemek istiyorum
         //ManageNuGetPacakages/Browse/EntityFramework indirelim
         MyPortfolioDbEntities db = new MyPortfolioDbEntities(); //EntityFramework dahil edelim
 
-        public ActionResult Index() //listeleme
+        public ActionResult Index() 
         {
-            var values = db.TblCategories.ToList();//Tbl.Categories sınıfını bize listeler
+            var values = db.TblCategories.ToList();
             return View(values);
         }
 
-        [HttpGet] //sayfayı getirecek
+        [HttpGet]
         public ActionResult CreateCategory()
         {
             return View();  
         }
 
-        [HttpPost] //butona tıklayınca tetiklenecek olan kısım
+        [HttpPost]
         public ActionResult CreateCategory(TblCategory category)
         {
             db.TblCategories.Add(category);
             db.SaveChanges();
-            return RedirectToAction("Index"); //Index sayfasına geri dönelim
+            return RedirectToAction("Index");
         }
 
         public ActionResult DeleteCategory(int id)

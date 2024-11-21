@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Academy_MyPortfolio_MVC.Models;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,7 @@ namespace Academy_MyPortfolio_MVC.Controllers
 {
     public class AdminLayoutController : Controller
     {
+        MyPortfolioDbEntities db = new MyPortfolioDbEntities();
         public ActionResult Layout()
         {
             return View();
@@ -25,11 +28,19 @@ namespace Academy_MyPortfolio_MVC.Controllers
 
         public PartialViewResult AdminLayoutSidebar()
         {
+            var email = Session["email"].ToString();
+            var admin = db.TblAdmins.FirstOrDefault(x => x.Email == email);
+            ViewBag.namesurname = admin.Name + " " + admin.Surname;
+            ViewBag.image = admin.ImageUrl;
             return PartialView();
         }
 
         public PartialViewResult AdminLayoutNavbar()
         {
+            var email = Session["email"].ToString();
+            var admin = db.TblAdmins.FirstOrDefault(x => x.Email == email);
+            ViewBag.namesurname = admin.Name+" "+admin.Surname;
+            ViewBag.image = admin.ImageUrl;
             return PartialView();
         }
 

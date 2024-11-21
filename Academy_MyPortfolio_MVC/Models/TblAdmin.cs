@@ -11,10 +11,19 @@ namespace Academy_MyPortfolio_MVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class TblExperties
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+
+    public partial class TblAdmin
     {
-        public int ExpertiseId { get; set; }
-        public string Title { get; set; }
+        public int AdminId { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string ImageUrl { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }
