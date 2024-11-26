@@ -40,7 +40,7 @@ namespace Academy_MyPortfolio_MVC.Controllers
         public ActionResult CreateProject(TblProject model)
         {
             CategoryDropDown();
-            if (!ModelState.IsValid) //eğer model şartlara uymuyorsa
+            if (!ModelState.IsValid) 
             {
                 return View(model);
             }
@@ -68,20 +68,20 @@ namespace Academy_MyPortfolio_MVC.Controllers
         [HttpPost]
         public ActionResult UpdateProject(TblProject model)
         {
-            CategoryDropDown();
-            var value = db.TblProjects.Find(model.ProjectId); //modelden gelen id'ye göre değerleri bulduk
-            value.Name = model.Name; //değerleri değiştiriyoruz
+            CategoryDropDown(); //hata alırsak aynı sayfayı yeniden döndüreceğiz, kategoriler listelensin
+            var value = db.TblProjects.Find(model.ProjectId); 
+            value.Name = model.Name; 
             value.ImageUrl = model.ImageUrl;
             value.Description = model.Description;
             value.CategoryId = model.CategoryId;
             value.GithubUrl = model.GithubUrl;
 
-            if (!ModelState.IsValid) //eğer model şartlara uymuyorsa
+            if (!ModelState.IsValid) 
             {
                 return View(model);
             }
 
-            db.SaveChanges(); //değerler validasyondan geçerse değişiklikleri kaydet
+            db.SaveChanges(); 
             return RedirectToAction("Index");
         }
     }

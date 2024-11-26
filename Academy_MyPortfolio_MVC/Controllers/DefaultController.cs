@@ -32,5 +32,23 @@ namespace Academy_MyPortfolio_MVC.Controllers
             var values = db.TblExperiences.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult DefaultProjects()
+        {
+            var values = db.TblProjects.ToList();
+            return PartialView(values);
+        }
+
+        [HttpGet]
+        public PartialViewResult SendMessage()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult SendMessage(TblMessage model)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
