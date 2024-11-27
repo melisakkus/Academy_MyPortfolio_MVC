@@ -19,11 +19,8 @@ namespace Academy_MyPortfolio_MVC.Controllers
         public ActionResult DeleteEducation(int id)
         {
             var education = db.TblEducations.Find(id);
+            //var education = db.TblEducations.FirstOrDefault(x=>x.EducationId == id);
             db.TblEducations.Remove(education);
-
-            var educatio2n = db.TblEducations.FirstOrDefault(x=>x.EducationId == id);
-
-
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -38,6 +35,11 @@ namespace Academy_MyPortfolio_MVC.Controllers
         [HttpPost]
         public ActionResult CreateEducation(TblEducation model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             db.TblEducations.Add(model);
             db.SaveChanges();
             return RedirectToAction("Index");

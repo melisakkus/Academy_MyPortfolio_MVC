@@ -26,7 +26,7 @@
     <br />
 
     <label>Bitiş Tarihi <span> <strong>(Eğer devam ediyorsa boş bırakın.)</strong></span> </label>
-    <input type="datetime" value="@(Model.EndDate.HasValue ? Model.EndDate.Value.ToString("d") : " ")" class="form-control"  />
+    <input type="datetime" name="EndDate" value="@(Model.EndDate.HasValue ? Model.EndDate.Value.ToString("d") : " ")" class="form-control"  />
     <br />
 
     <label>Derece<span> <strong>(Lisans, Önlisans, YüksekLisans vs.)</strong></span> </label>

@@ -11,14 +11,25 @@ namespace Academy_MyPortfolio_MVC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblEducation
     {
         public int EducationId { get; set; }
+
+        [Required(ErrorMessage ="Okul adý boþ geçilemez.")]
         public string SchoolName { get; set; }
+
+        [Required(ErrorMessage ="Bölüm adý boþ geçilemez.")]
         public string DepartmentName { get; set; }
+
+        [Required(ErrorMessage = "Baþlangýç tarihi boþ geçilemez.")]
         public System.DateTime StartDate { get; set; }
+
         public Nullable<System.DateTime> EndDate { get; set; }
+
+        [Required(ErrorMessage = "Açýklama bölümü boþ geçilemez.")]
+        [MaxLength(300,ErrorMessage ="300 karakterden fazla karakter kullanmayýnýz.")]
         public string Description { get; set; }
         public string Degree { get; set; }
     }

@@ -9,18 +9,22 @@
 <form method="post">
     <label>Okul Adı</label>
     @Html.TextBoxFor(x => x.SchoolName, new { @class = "form-control" })
+    <p class="text-warning">@Html.ValidationMessageFor(x=>x.SchoolName)</p>
     <br />
 
     <label>Bölüm Adı</label>
     @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+    <p class="text-warning">@Html.ValidationMessageFor(x=>x.DepartmentName)</p>
     <br />
 
     <label>Açıklama</label>
     @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <p class="text-warning">@Html.ValidationMessageFor(x=>x.Description)</p>
     <br />
 
     <label>Başlama Tarihi</label>
     <input type="date" name="StartDate" class="form-control" />
+    <p class="text-warning">@Html.ValidationMessageFor(x=>x.StartDate)</p>
     <br />
 
     <label>Bitiş Tarihi <span> <strong>(Eğer devam ediyorsa boş bırakın.)</strong></span> </label>
@@ -34,7 +38,6 @@
         <option  value="Lisans">Lisans</option>
         <option  value="Yüksek Lisans">Yüksek Lisans</option>
     </select>
-
     <br />
     <button class="btn btn-outline-primary">Kaydet</button>
 </form>
