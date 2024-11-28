@@ -1,0 +1,40 @@
+﻿@model List<Academy_MyPortfolio_MVC.Models.TblEducation>
+<div class="column lg-6 tab-12">
+
+    <h2 class="text-pretitle" data-animate-el>
+        EĞİTİMLERİM
+    </h2>
+
+    <div class="timeline" data-animate-el>
+
+        @foreach (var item in Model)
+        {
+            <div class="timeline__block">
+                <div class="timeline__bullet"></div>
+                <div class="timeline__header">
+                    <h4 class="timeline__title"></h4>
+                    <h3>@item.SchoolName</h3>
+                    <h5 class="timeline__meta">@item.DepartmentName</h5>
+                    <p class="timeline__timeframe">@item.StartDate.ToShortDateString() - @(item.EndDate.HasValue ? item.EndDate.Value.ToShortDateString() : "Devam Ediyor")</p>
+                </div>
+                <div class="timeline__desc">
+                    <p>@item.Description</p>
+                </div>
+            </div>
+        }
+
+
+        @*<div class="timeline__block">
+                <div class="timeline__bullet"></div>
+                <div class="timeline__header">
+                    <h4 class="timeline__title">School of Cool Designers</h4>
+                    <h5 class="timeline__meta">B.A. Degree in Graphic Design</h5>
+                    <p class="timeline__timeframe">August 2012</p>
+                </div>
+                <div class="timeline__desc">
+                    <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
+                </div>
+            </div>*@
+
+    </div> <!-- end timeline -->
+</div>

@@ -1,4 +1,4 @@
-﻿using Academy_MyPortfolio_MVC.Models;
+﻿ using Academy_MyPortfolio_MVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +31,12 @@ namespace Academy_MyPortfolio_MVC.Controllers
         {
             var values = db.TblExperiences.ToList();
             return PartialView(values);
+        }
+
+        public PartialViewResult DefaultEducations()
+        {
+            var values = db.TblEducations.ToList();
+            return PartialView(values); 
         }
 
         public PartialViewResult DefaultProjects()
