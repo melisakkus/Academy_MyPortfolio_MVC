@@ -33,7 +33,16 @@
     <input type="password" name="Password" class="form-control" />
     <br />
 
-    <p style="color:red">@Html.ValidationSummary()</p>
+    @*<p style="color:red">@Html.ValidationSummary()</p>*@
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <strong>Uyarı!</strong>@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        </div>
+    }
+
+
     <button class="btn btn-outline-primary">Bilgileri Güncelle</button>
 
 </form>

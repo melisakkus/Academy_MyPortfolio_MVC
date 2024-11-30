@@ -47,7 +47,7 @@ namespace Academy_MyPortfolio_MVC.Controllers
                 Session.Abandon();
                 return RedirectToAction("Index", "Login");
             }
-            ModelState.AddModelError("","Girdiğiniz Şifre Hatalı");
+            ModelState.AddModelError("","Girdiğiniz Şifre Hatalı!");
             return View(model);
         }
     }
