@@ -14,7 +14,7 @@
             <th>Ad Soyad</th>
             <th>Email</th>
             <th>Konu</th>
-            @*<th>Sil</th>*@
+            <th>Sil</th>
             <th>Mesajı Görüntüle</th>
         </tr>
     </thead>
@@ -29,7 +29,7 @@
                 <td>@item.Email</td>
                 <td>@item.Subject</td>
                 <td> <a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-outline-danger">Sil</a> </td>
-                <td> <a href="/Message/MessageDetail/@item.MessageId" class="btn btn-outline-danger">Mesajları Görüntüle</a> </td>
+                <td> <a href="/Message/MessageDetail/@item.MessageId" class="btn btn-outline-warning">Mesajları Görüntüle</a> </td>
             </tr>
         }
     </tbody>
