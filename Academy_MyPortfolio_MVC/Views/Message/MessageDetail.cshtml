@@ -3,21 +3,25 @@
     ViewBag.Title = "MessageDetail";
     Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
+<br />
+<h2 style="padding-left:20px">Mesaj İçeriği</h2>
+<br />
+<table class="table table-bordered">
+        <tr>
+            <th>Ad Soyad: </th>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <th>Email : </th>
+            <td>@Model.Email</td>
 
-<h2>Mesaj İçeriği</h2>
-<table class="table table-striped">
-    <tr>
-        <th>Gönderen Ad Syoad: </th>
-        <td>@Model.Name</td>
-    </tr>
-    <tr>
-        <th>Gönderen Email : </th>
-        <td>@Model.Email</td>
-    </tr>
-    <tr>
-        <th>Mesaj İçeriği </th>
-        <td>@Model.MessageContent</td>
-    </tr>
+        </tr>
+        <tr>
+            <th>Mesaj : </th>
+            <td>@Model.MessageContent</td>
+        </tr>
 </table>
-<a href="/Message/Index">Mesajlara Geri Dön</a>
+
+<a href="/Message/AllMessages" class="btn btn-info" style="display: block; width: fit-content; margin: 0 auto;">Mesajlara Geri Dön</a>
+<br />
 

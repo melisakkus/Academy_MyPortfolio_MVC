@@ -1,14 +1,22 @@
 ﻿@model List<Academy_MyPortfolio_MVC.Models.TblMessage>
 
 @{
-    ViewBag.Title = "OkunmamışMesajlar";
+    ViewBag.Title = "Mesajlar";
     Layout = "~/Views/AdminLayout/Layout.cshtml";
     int count = 0;
 
 }
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info" role="alert">
+        @TempData["Message"]
+    </div>
+}
+
 <br />
-<h2 style="padding-left:20px">Okunmamış Mesajlar</h2>
+<h2 style="padding-left:20px">Tüm Mesajlar</h2>
 <br />
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -37,8 +45,8 @@
     </tbody>
 
 </table>
-
-<div style="text-align: center; ">
-    <a href="/Message/AllMessages" class="btn btn-info">Tüm Mesajları Görüntüle</a>
-</div>
 <br />
+
+
+
+

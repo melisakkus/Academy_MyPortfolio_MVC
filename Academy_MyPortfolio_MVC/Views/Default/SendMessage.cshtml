@@ -1,19 +1,15 @@
-﻿
-
-
+﻿@model List<Academy_MyPortfolio_MVC.Models.TblSocialMedia>
 
 <section id="contact" class="s-contact target-section">
 
     <div class="row contact-top">
         <div class="column lg-12">
             <h2 class="text-pretitle">
-                Get In Touch
+                İletişime Geç
             </h2>
 
             <p class="h1">
-                I love to hear from you.
-                Whether you have a question or just
-                want to chat about design, tech & art — shoot me a message.
+                Bir sorunuz varsa ya da tasarım, teknoloji ve yazılım üzerine fikir paylaşmak isterseniz — bana bir mesaj gönderin.
             </p>
         </div>
     </div> <!-- end contact-top -->
@@ -21,23 +17,20 @@
 
 
     <div class="row contact-bottom">
-        <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
-            <h3 class="text-pretitle">Reach me at</h3>
-            <p class="contact-links">
-                <a href="mailto:sayhello@luther.com" class="mailtoui">sayhello@luther.com</a> <br>
-                <a href="tel:+1975432345">+197 543 2345</a>
-            </p>
-        </div>
+
+                @Html.Action("SendMessageContact","Default")
+
+
         <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
-            <h3 class="text-pretitle">Social</h3>
+            <h3 class="text-pretitle">Sosyal Medya</h3>
             <ul class="contact-social">
-                <li><a href="#0">Behance</a></li>
-                <li><a href="#0">Dribble</a></li>
-                <li><a href="#0">Twitter</a></li>
-                <li><a href="#0">Instagram</a></li>
-                <li><a href="#0">Github</a></li>
-            </ul>
+                @foreach (var item in Model)
+                {
+                    <li><a href="@item.Url">@item.Name</a></li>
+                }
+                </ul>
         </div>
+
         <div class="column lg-4 md-12 contact-block">
             <a href="#contact2" class="btn btn-primary">
                 Bana Ulaşın
@@ -45,13 +38,7 @@
 
         </div>
     </div>
-
-
-
-
 </section>
-
-
 
 
 <section id="contact2" class="s-contact target-section">
@@ -63,16 +50,16 @@
             </h2>
             <form class="column lg-12" method="post" action="/Default/SendMessage/">
                 <label>Ad Soyad</label>
-                <input type="text" name="Name" class="form-control" required />
+                <input type="text" name="Name" class="form-control" style="width: 300px;"   required />
                 <br />
                 <label>Email</label>
-                <input type="email" name="Email" class="form-control" required />
+                <input type="email" name="Email" class="form-control" style="width: 300px;"  required />
                 <br />
                 <label>Konu</label>
-                <input type="text" name="Subject" class="form-control" required />
+                <input type="text" name="Subject" class="form-control" style="width: 500px;"  required />
                 <br />
                 <label>Mesajınız</label>
-                <textarea type="text" name="MessageContent" class="form-control" rows="4" required></textarea>
+                <textarea type="text" name="MessageContent" class="form-control" rows="4" cols="200" required></textarea>
                 <br />
                 <button class="btn btn-outline-dark">Mesajı Gönder</button>
 
@@ -80,86 +67,4 @@
             </form>
         </div>
     </div> <!-- end contact-top -->
-
-
-
-
-
-
-
-
 </section>
-
-
-<!--<sec-->
-<!--tion id="contact" class="s-contact target-section">
-
-<div class="row contact-top">
-    <div class="column lg-12">
-        <h2 class="text-pretitle">
-            Get In Touch
-        </h2>
-
-        <p class="h1">
-            I love to hear from you.
-            Whether you have a question or just
-            want to chat about design, tech & art — shoot me a message.
-        </p>
-    </div>
-</div>-->
- <!-- end contact-top -->
-<!--<div class="row contact-bottom">
-    <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
-        <h3 class="text-pretitle">Reach me at</h3>
-        <p class="contact-links">
-            <a href="mailto:sayhello@luther.com" class="mailtoui">sayhello@luther.com</a> <br>
-            <a href="tel:+1975432345">+197 543 2345</a>
-        </p>
-    </div>
-    <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
-        <h3 class="text-pretitle">Social</h3>
-        <ul class="contact-social">
-            <li><a href="#0">Behance</a></li>
-            <li><a href="#0">Dribble</a></li>
-            <li><a href="#0">Twitter</a></li>
-            <li><a href="#0">Instagram</a></li>
-            <li><a href="#0">Github</a></li>
-        </ul>
-    </div>
-    <div class="column lg-4 md-12 contact-block">
-        <a href="#modal-message" class="mailtoui btn btn--medium u-fullwidth contact-btn">Bana Ulaşın</a>
-    </div>
-</div>-->
- <!-- end contact-bottom -->
-<!--<div id="modal-message" hidden>
-        <div class="modal-popup">
-            <img src="" alt="">
-
-            <div class="modal-popup__desc">
-                <form method="post">
-
-                    <label>Ad Soyad</label>
-                    <input type="text" name="Name" class="form-control" />
-                    <br />
-
-                    <label>Email</label>
-                    <input type="email" name="Email" class="form-control" />
-                    <br />
-
-                    <label>Konu</label>
-                    <input type="text" name="Subject" class="form-control" />
-                    <br />
-
-                    <label>Mesajınız</label>
-                    <textarea type="text" name="MessageContent" class="form-control" rows="4"></textarea>
-                    <br />
-
-                    <button class="btn btn-outline-dark">Mesajı Gönder</button>
-                </form>
-            </div>
-
-        </div>
-    </div>
-
-
-</section>-->

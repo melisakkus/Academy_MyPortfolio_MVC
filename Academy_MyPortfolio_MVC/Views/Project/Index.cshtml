@@ -10,6 +10,7 @@
 <table class="table table-bordered">
     <tr>
         <th>#</th>
+        <th>Proje Görseli</th>
         <th>Proje Adı</th>
         <th>Proje Açıklaması</th>
         <th>Proje Kategorisi</th>
@@ -23,7 +24,8 @@
         count++;
                 <tr>
                     <td>@count</td>
-                    <td><img src="@item.ImageUrl" style="width:50px;height:50px" alt="Proje Görseli"  /> @item.Name</td>
+                    <td><img src="@item.ImageUrl" style="width:80px;height:60px" alt="Proje Görseli" /></td>
+                    <td>@item.Name</td>
                     <td>@item.Description</td>
                     <td>@item.TblCategory.Name</td>
                     <td><a href="@item.GithubUrl" class="btn btn-outline-warning">Github Linki</a></td>

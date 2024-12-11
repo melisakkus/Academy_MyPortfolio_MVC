@@ -13,7 +13,21 @@ namespace Academy_MyPortfolio_MVC.Controllers
         MyPortfolioDbEntities db = new MyPortfolioDbEntities();
         public ActionResult Index()
         {
-            var values = db.TblMessages.Where(x=>x.IsRead == false).ToList();
+            var values = db.TblMessages.Where(x => x.IsRead == false).ToList();
+            if(values.Count == 0)
+            {
+                TempData["Message"] = "Yeni mesajınız bulunmamaktadır.";  
+                return RedirectToAction("AllMessages");
+            }
+            else
+            {
+                return View(values);
+            }
+        }
+
+        public ActionResult AllMessages()
+        {
+            var values = db.TblMessages.ToList();
             return View(values);
         }
 
@@ -25,21 +39,12 @@ namespace Academy_MyPortfolio_MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult MessageDetail(int? id)
+        public ActionResult MessageDetail(int id)
         {
             var message = db.TblMessages.Find(id);
             message.IsRead = true;
             db.SaveChanges();
             return View(message);
         }
-
-        //[HttpPost]
-        //public ActionResult MakeMessageRead(int id)
-        //{
-        //    var message = db.TblMessages.Find(id);
-        //    message.IsRead = true;
-        //    db.SaveChanges();
-        //    return PartialView(message);
-        //}
     }
 }

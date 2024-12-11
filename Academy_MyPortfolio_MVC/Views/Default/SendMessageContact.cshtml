@@ -1,0 +1,15 @@
+﻿@model List<Academy_MyPortfolio_MVC.Models.TblContact>
+
+
+
+<div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
+    <h3 class="text-pretitle">Bana Ulaşın</h3>
+    <p class="contact-links">
+        @foreach (var item in Model)
+        {
+            <a href="mailto:@item.Email" class="mailtoui">@item.Email</a>
+            <br>
+            <a href="tel:@item.Phone">@item.Phone</a>
+        }
+    </p>
+</div>

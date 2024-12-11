@@ -48,7 +48,8 @@ namespace Academy_MyPortfolio_MVC.Controllers
         [HttpGet]
         public PartialViewResult SendMessage()
         {
-            return PartialView();
+            var values = db.TblSocialMedias.ToList();
+            return PartialView(values);
         }
 
         [HttpPost]
@@ -60,15 +61,28 @@ namespace Academy_MyPortfolio_MVC.Controllers
             return RedirectToAction("Index");
         }
 
+        public PartialViewResult SendMessageContact()
+        {
+            var contact = db.TblContacts.ToList();
+            return PartialView(contact);
+        }
+
+
         public PartialViewResult DefaultAbout()
         {
             var values = db.TblAbouts.ToList();
             return PartialView(values);
         }
 
-        public PartialViewResult DefaultTestimonial() //eksik
+        public PartialViewResult DefaultTestimonial() 
         {
             var values = db.TblTestimonials.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultBannerSocialMedias()
+        {
+            var values = db.TblSocialMedias.ToList();
             return PartialView(values);
         }
     }
