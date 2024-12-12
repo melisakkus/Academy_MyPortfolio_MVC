@@ -16,7 +16,7 @@ namespace Academy_MyPortfolio_MVC.Controllers
             var values = db.TblMessages.Where(x => x.IsRead == false).ToList();
             if(values.Count == 0)
             {
-                TempData["Message"] = "Yeni mesajınız bulunmamaktadır.";  
+                TempData["Message"] = "Okunmamış mesajınız bulunmamaktadır.";  
                 return RedirectToAction("AllMessages");
             }
             else

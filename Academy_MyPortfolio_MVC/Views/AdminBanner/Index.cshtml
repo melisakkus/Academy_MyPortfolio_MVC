@@ -1,0 +1,56 @@
+﻿@model List<Academy_MyPortfolio_MVC.Models.TblBanner>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+<br />
+<h2 style="padding-inline-start:20px">Banner Sayfası</h2>
+<br />
+<table class="table table-striped table-hover table-bordered">
+
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Gösteriliyor mu?</th>
+            <th>Sil</th>
+            <th>Düzenle</th>
+            <th>Anasayfada Gösterilsin Mi?</th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tbody>
+            <tr>
+                <th>@count</th>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+
+                @if (@item.IsShown == true)
+                {
+                    <td>Gösteriliyor</td>
+                }
+                else
+                {
+                    <td>Gösterilmiyor</td>
+                }
+
+                <td><a href="/AdminBanner/BannerDelete/@item.BannerId" class="btn btn-primary">Sil</a></td>
+                <td><a href="/AdminBanner/BannerUpdate/@item.BannerId" class="btn btn-warning">Düzenle</a></td>
+                <td>
+                    <a href="/AdminBanner/BannerIsShown/@item.BannerId" class="btn btn-success">Gösterilsin</a>
+                    <a href="/AdminBanner/BannerIsNotShown/@item.BannerId" class="btn btn-danger">Gösterilmesin</a>
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>
+<br />
+<div class="text-center">
+    <a href="/AdminBanner/NewBanner" class="btn btn-success">Yeni Ekle</a>
+</div>
+<br />

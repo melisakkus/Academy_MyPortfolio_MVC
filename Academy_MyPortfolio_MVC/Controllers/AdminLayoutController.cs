@@ -41,7 +41,8 @@ namespace Academy_MyPortfolio_MVC.Controllers
             var admin = db.TblAdmins.FirstOrDefault(x => x.Email == email);
             ViewBag.namesurname = admin.Name+" "+admin.Surname;
             ViewBag.image = admin.ImageUrl;
-            return PartialView();
+            var unreadMessages = db.TblMessages.Where(x => x.IsRead == false).Take(3).ToList();
+            return PartialView(unreadMessages);
         }
 
         public PartialViewResult AdminLayoutFooter()

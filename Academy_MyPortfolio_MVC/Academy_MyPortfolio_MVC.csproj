@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminBannerController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -472,6 +473,9 @@
     <Content Include="Views\Default\DefaultBannerSocialMedias.cshtml" />
     <Content Include="Views\Default\SendMessageContact.cshtml" />
     <Content Include="Views\Message\AllMessages.cshtml" />
+    <Content Include="Views\AdminBanner\Index.cshtml" />
+    <Content Include="Views\AdminBanner\BannerUpdate.cshtml" />
+    <Content Include="Views\AdminBanner\NewBanner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

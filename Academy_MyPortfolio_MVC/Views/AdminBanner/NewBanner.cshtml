@@ -1,0 +1,37 @@
+﻿@model Academy_MyPortfolio_MVC.Models.TblBanner
+@{
+    ViewBag.Title = "NewBanner";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+
+    <h2 style="padding-inline-start:20px">Yeni Banner Ekleme</h2>
+    <br />
+
+    @Html.HiddenFor(x => x.BannerId)
+
+    <label><strong>Giriş Başlığı:</strong></label>
+    <br />
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label><strong>Açıklama:</strong></label>
+    <br />
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", rows = 3 })
+    <br />
+
+    <label><strong>Gösterilme Durumu: </strong></label>
+    <br />
+    <select name="IsShown" class="form-select bg-dark text-white">
+        <option disabled>Seçim Yapınız</option>
+        <option value="True">Gösterilsin</option>
+        <option value="False">Gösterilmesin</option>
+    </select>
+
+    <br />
+    <div class="text-center">
+        <button class="btn btn-warning">Kaydet</button>
+    </div>
+    <br />
+</form>
