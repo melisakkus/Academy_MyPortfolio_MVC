@@ -4,10 +4,12 @@
     Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
 
-<h2>Eğitim Güncelleme Sayfası</h2>
+<br />
+<h2 style="padding-left:20px">Eğitim Güncelleme Sayfası</h2>
+<br />
 
 <form method="post">
-    @Html.HiddenFor(x=>x.EducationId)
+    @Html.HiddenFor(x => x.EducationId)
 
     <label>Okul Adı</label>
     @Html.TextBoxFor(x => x.SchoolName, new { @class = "form-control" })
@@ -26,17 +28,22 @@
     <br />
 
     <label>Bitiş Tarihi <span> <strong>(Eğer devam ediyorsa boş bırakın.)</strong></span> </label>
-    <input type="datetime" name="EndDate" value="@(Model.EndDate.HasValue ? Model.EndDate.Value.ToString("d") : " ")" class="form-control"  />
+    <input type="datetime" name="EndDate" value="@(Model.EndDate.HasValue ? Model.EndDate.Value.ToString("d") : " ")" class="form-control" />
     <br />
 
     <label>Derece<span> <strong>(Lisans, Önlisans, YüksekLisans vs.)</strong></span> </label>
     <select name="Degree" class="form-control">
         <option disabled>Seçiminizi Yapın</option>
-        <option value="ÖnLisans" @(Model.Degree=="ÖnLisans" ? "selected":"")  >ÖnLisans</option>
-        <option value="Lisans" @(Model.Degree=="Lisans" ? "selected":"")  >Lisans</option>
-        <option value="Yüksek Lisans" @(Model.Degree=="Yüksek Lisans" ? "selected":"")  >Yüksek Lisans</option>
+        <option value="ÖnLisans" @(Model.Degree == "ÖnLisans" ? "selected" : "")>ÖnLisans</option>
+        <option value="Lisans" @(Model.Degree == "Lisans" ? "selected" : "")>Lisans</option>
+        <option value="Yüksek Lisans" @(Model.Degree == "Yüksek Lisans" ? "selected" : "")>Yüksek Lisans</option>
     </select>
 
     <br />
-    <button class="btn btn-outline-primary">Güncelle</button>
+
+    <div class="text-center">
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+    <br />
+
 </form>

@@ -1,0 +1,36 @@
+﻿@model Academy_MyPortfolio_MVC.Models.TblAbout
+@{
+    ViewBag.Title = "AddAbout";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<br />
+<h2 style="padding-left:20px">Yeni Hakkımda Alanı Ekleme Sayfası</h2>
+<br />
+<form method="post" enctype="multipart/form-data">
+    <br />
+
+    @Html.HiddenFor(x => x.AboutId)
+
+    <label><strong>Resim </strong></label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+
+    <label><strong>Giriş Başlığı</strong></label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label><strong>Açıklama</strong></label>
+    @Html.TextAreaFor(x => x.Description, 3, 10, new { @class = "form-control" })
+    <br />
+
+    <label><strong>Cv</strong></label>
+    @Html.TextBoxFor(x => x.CvUrl, new { @class = "form-control" })
+    <br />
+
+    <div class="text-center">
+        <button class="btn btn-success">Kaydet</button>
+    </div>
+    <br />
+
+</form>
+

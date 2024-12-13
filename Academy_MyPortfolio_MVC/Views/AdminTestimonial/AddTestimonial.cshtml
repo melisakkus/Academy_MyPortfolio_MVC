@@ -1,0 +1,40 @@
+﻿@model Academy_MyPortfolio_MVC.Models.TblTestimonial
+@{
+    ViewBag.Title = "AddTestimonial";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post">
+    <br />
+    <h2 style="padding-inline-start:20px">Yeni Referans Ekleme</h2>
+    <br />
+
+    @Html.HiddenFor(x => x.TestimonialId)
+
+    <label><strong>Ad Soyad: </strong></label>
+    <br />
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+
+    <label><strong>Meslek :</strong></label>
+    <br />
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label><strong>Resim Link : </strong></label>
+    <br />
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control"})
+    <br />
+
+    <label><strong>Yorum : </strong></label>
+    <br />
+    @Html.TextAreaFor(x => x.Comment, new { @class = "form-control", rows = 3 })
+    <br />
+
+    <br />
+    <div class="text-center">
+        <button class="btn btn-warning">Kaydet</button>
+    </div>
+    <br />
+</form>
+

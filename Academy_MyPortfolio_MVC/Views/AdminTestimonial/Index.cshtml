@@ -1,0 +1,43 @@
+﻿@model List<Academy_MyPortfolio_MVC.Models.TblTestimonial>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<br />
+<h2 style="padding-left:20px">Referanslar Sayfası</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Ad Soyad</th>
+            <th>Meslek</th>
+            <th>Resim Link</th>
+            <th>Yorum</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.NameSurname</td>
+                <td>@item.Title</td>
+                <td>@item.ImageUrl</td>
+                <td>@item.Comment</td>
+                <td><a href="/AdminTestimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/AdminTestimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-outline-warning">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="text-center">
+    <a href="/AdminTestimonial/AddTestimonial" class="btn btn-outline-success">Yeni Ekle</a>
+</div>
+<br />
+
+

@@ -4,10 +4,12 @@
     Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
 
-<h2>Proje Güncelleme Sayfası</h2>
+<br />
+<h2 style="padding-left:20px">Proje Güncelleme Sayfası</h2>
+<br />
 
 <form method="post">
-    @Html.HiddenFor(x=>x.ProjectId)
+    @Html.HiddenFor(x => x.ProjectId)
     <label>Proje Adı</label>
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
     <p class="text-danger"> @Html.ValidationMessageFor(x => x.Name) </p>
@@ -33,5 +35,8 @@
     <p class="text-danger"> @Html.ValidationMessageFor(x => x.GithubUrl) </p>
     <br />
 
-    <button class="btn btn-outline-success">Güncelle</button>
+    <div class="text-center">
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+    <br />
 </form>

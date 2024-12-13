@@ -1,0 +1,28 @@
+﻿@model Academy_MyPortfolio_MVC.Models.TblExperties 
+@{
+    ViewBag.Title = "UpdateExpertiese";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>
+    <br />
+    <h2 style="padding-left:20px">Uzmanlık Güncelleme</h2>
+    <br />
+
+    <form method="post">
+
+        @Html.HiddenFor(x => x.ExpertiseId)
+
+        <label style="padding-left:10px"><strong>İsim : </strong></label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br />
+
+        <div class="text-center">
+            <button class="btn btn-success">Kaydet</button>
+            <br />
+        </div>
+
+    </form>
+    <br />
+</h2>
+

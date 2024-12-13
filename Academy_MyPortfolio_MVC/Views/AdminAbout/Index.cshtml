@@ -1,0 +1,51 @@
+﻿@model List<Academy_MyPortfolio_MVC.Models.TblAbout>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+<br />
+<h2 style="padding-left:20px">Hakkımda Sayfası</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>Resim Link</th>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Cv Link</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.ImageUrl</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.CvUrl</td>
+                <!--<td>-->
+                    @*@if (string.IsNullOrEmpty(item.CvUrl))
+                    {
+                        <span>CV Yüklenmedi</span>
+                    }
+                    else
+                    {
+                        <span>CV Yüklendi</span>
+                    }*@
+                <!--</td>-->
+                <td><a href="/AdminAbout/DeleteAbout/@item.AboutId" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/AdminAbout/UpdateAbout/@item.AboutId" class="btn btn-outline-warning">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="text-center">
+    <a href="/AdminAbout/AddAbout" class="btn btn-outline-success">Yeni Ekle</a>
+</div>
+<br />
+

@@ -5,7 +5,9 @@
     int count = 0;
 }
 
-<h2>Eğitim Hayatım</h2>
+<br />
+<h2 style="padding-left:20px">Eğitim Hayatım</h2>
+<br />
 
 <br />
 <table class="table table-bordered table-hover">
@@ -23,35 +25,38 @@
     @if (!Model.Any())
     {
         @*<div class="alert alert-warning">
-            <strong>Uyarı!</strong> Herhangi bir eğitim bilgisi bulunmamaktadır.
-        </div>*@
-       
+                <strong>Uyarı!</strong> Herhangi bir eğitim bilgisi bulunmamaktadır.
+            </div>*@
+
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <strong>Uyarı!</strong> Herhangi bir eğitim bilgisi bulunmamaktadır.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 
-        }
+    }
 
-        @foreach (var item in Model)
-        {
+    @foreach (var item in Model)
+    {
 
-            count++;
-            <tr>
-                <th>@count</th>
-                <td>@item.SchoolName</td>
-                <td>@item.DepartmentName</td>
-                <td>@item.StartDate.ToShortDateString()</td>
-                <td>@(String.IsNullOrEmpty(item.EndDate?.ToString()) ? "Devam Ediyor" : item.EndDate?.ToShortDateString())</td>
-                @*<td>@item.EndDate</td>*@
-                <td>@item.Degree</td>
-                <td><a href="/Education/DeleteEducation/@item.EducationId" class="btn btn-danger"> Sil</a></td>
-                <td><a href="/Education/UpdateEducation/@item.EducationId" class="btn btn-info"> Güncelle</a></td>
-            </tr>
-        }
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.SchoolName</td>
+            <td>@item.DepartmentName</td>
+            <td>@item.StartDate.ToShortDateString()</td>
+            <td>@(String.IsNullOrEmpty(item.EndDate?.ToString()) ? "Devam Ediyor" : item.EndDate?.ToShortDateString())</td>
+            @*<td>@item.EndDate</td>*@
+            <td>@item.Degree</td>
+            <td><a href="/Education/DeleteEducation/@item.EducationId" class="btn btn-danger"> Sil</a></td>
+            <td><a href="/Education/UpdateEducation/@item.EducationId" class="btn btn-info"> Güncelle</a></td>
+        </tr>
+    }
 
 
-    </table>
+</table>
+<div class="text-center">
     <a href="/Education/CreateEducation" class="btn btn-outline-success">Yeni Eğitim Ekle</a>
+</div>
+<br />
 
 

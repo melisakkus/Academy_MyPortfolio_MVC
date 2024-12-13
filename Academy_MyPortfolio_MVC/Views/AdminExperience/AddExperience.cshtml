@@ -1,0 +1,41 @@
+﻿@model Academy_MyPortfolio_MVC.Models.TblExperience
+
+@{
+    ViewBag.Title = "AddExperience";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<br />
+<h2 style="padding-left:20px">Deneyim Ekleme</h2>
+<br />
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.ExperienceId)
+
+    <label style="padding-left:10px"><strong>Şirket : </strong></label>
+    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+    <br />
+
+    <label style="padding-left:10px"><strong>Meslek : </strong></label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label style="padding-left:10px"><strong>Başlangıç Tarihi : </strong></label>
+    @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control" })
+    <br />
+
+    <label style="padding-left:10px"><strong>Bitiş Tarihi : </strong></label>
+    @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control" })
+    <br />
+
+    <label style="padding-left:10px"><strong>Açıklama : </strong></label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+
+    <div class="text-center">
+        <button class="btn btn-success">Kaydet</button>
+        <br />
+    </div>
+</form>
+<br />

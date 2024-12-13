@@ -129,8 +129,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminAboutController.cs" />
     <Compile Include="Controllers\AdminBannerController.cs" />
+    <Compile Include="Controllers\AdminContactController.cs" />
+    <Compile Include="Controllers\AdminExperienceController.cs" />
+    <Compile Include="Controllers\AdminExpertieseController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\AdminSocialMediaController.cs" />
+    <Compile Include="Controllers\AdminTestimonialController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
@@ -476,9 +482,29 @@
     <Content Include="Views\AdminBanner\Index.cshtml" />
     <Content Include="Views\AdminBanner\BannerUpdate.cshtml" />
     <Content Include="Views\AdminBanner\NewBanner.cshtml" />
+    <Content Include="Views\AdminAbout\Index.cshtml" />
+    <Content Include="Views\AdminAbout\AddAbout.cshtml" />
+    <Content Include="Views\AdminAbout\UpdateAbout.cshtml" />
+    <Content Include="Views\AdminContact\Index.cshtml" />
+    <Content Include="Views\AdminContact\AddContact.cshtml" />
+    <Content Include="Views\AdminContact\UpdateContact.cshtml" />
+    <Content Include="Views\AdminTestimonial\Index.cshtml" />
+    <Content Include="Views\AdminTestimonial\AddTestimonial.cshtml" />
+    <Content Include="Views\AdminTestimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\AdminSocialMedia\Index.cshtml" />
+    <Content Include="Views\AdminSocialMedia\UpdateSocialMedia.cshtml" />
+    <Content Include="Views\AdminSocialMedia\AddSocialMedia.cshtml" />
+    <Content Include="Views\AdminExperience\Index.cshtml" />
+    <Content Include="Views\AdminExperience\UpdateExperience.cshtml" />
+    <Content Include="Views\AdminExperience\AddExperience.cshtml" />
+    <Content Include="Views\AdminExpertiese\UpdateExpertiese.cshtml" />
+    <Content Include="Views\AdminExpertiese\AddExpertiese.cshtml" />
+    <Content Include="Views\AdminExpertiese\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="CvImages\CV\" />
+    <Folder Include="CvImages\Images\" />
     <Folder Include="images\" />
     <Folder Include="Views\Exit\" />
   </ItemGroup>

@@ -4,32 +4,41 @@
     Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
 
-<h2>Profil Bilgileri Güncelleme Sayfası</h2>
+<br />
+<h2 style="padding-left:20px">Profil Bilgileri Güncelleme Sayfası</h2>
+<br />
+
 <form method="post" enctype="multipart/form-data">
 
-    <div class="text-center">
-        <label>Profil Resmi</label>
-        <img src="@Model.ImageUrl" style="width:75px;height:100px" alt="Profil Resmi" />
+    <div>
+        <label style="padding-left:10px"><strong>Kullanılan Profil Resmi </strong></label>
+        <br />
+        <div class="text-center">
+            <img src="@Model.ImageUrl" style="width:75px;height:100px" alt="Profil Resmi" />
+
+        </div>
     </div>
     <br />
 
-    <label>Profil Resmi Yükleyin</label>
-    <input type="file" name="ImageFile" />
+    <label style="padding-left:10px"><strong>Yeni Profil Resmi Yükleyin </strong></label>
+    <div class="text-center">
+        <input type="file" name="ImageFile" />
+    </div>
+
+    <br />
+    <label style="padding-left:10px"><strong>Ad</strong></label>
+    <input type="text" name="Name" class="form-control" value="@Model.Name"  />
     <br />
 
-    <label>Ad</label>
-    <input type="text" name="Name" class="form-control" value="@Model.Name" />
-    <br />
-
-    <label>Soyad</label>
+    <label style="padding-left:10px"><strong>Soyad </strong></label>
     <input type="text" name="Surname" class="form-control" value="@Model.Surname" />
     <br />
 
-    <label>Email</label>
+    <label style="padding-left:10px"><strong>Email </strong></label>
     <input type="text" name="Email" class="form-control" value="@Model.Email" />
     <br />
 
-    <label>Şifreyi Girin</label>
+    <label style="padding-left:10px"><strong>Şifreyi Girin </strong></label>
     <input type="password" name="Password" class="form-control" />
     <br />
 
@@ -42,8 +51,9 @@
         </div>
     }
 
-
-    <button class="btn btn-outline-primary">Bilgileri Güncelle</button>
-
+    <div class="text-center">
+        <button class="btn btn-success">Bilgileri Güncelle</button>
+    </div>
+    <br />
 </form>
 
