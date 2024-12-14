@@ -18,8 +18,16 @@ namespace Academy_MyPortfolio_MVC.Models
     {
         public int AboutId { get; set; }
         public string ImageUrl { get; set; }
+        
         public string Title { get; set; }
         public string Description { get; set; }
         public string CvUrl { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase PdfFile { get; set; }
+
     }
 }

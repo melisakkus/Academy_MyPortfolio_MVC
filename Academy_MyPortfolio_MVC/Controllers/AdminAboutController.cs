@@ -32,13 +32,31 @@ namespace Academy_MyPortfolio_MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateAbout(TblAbout newAbout)
+        public ActionResult UpdateAbout(TblAbout model)
         {
-            var about = db.TblAbouts.Find(newAbout.AboutId);
-            about.ImageUrl = newAbout.ImageUrl;
-            about.Title = newAbout.Title;   
-            about.Description = newAbout.Description;
-            about.CvUrl = newAbout.CvUrl;
+            var about = db.TblAbouts.Find(model.AboutId);
+
+            if (model.ImageFile != null)
+            {
+                var currentDirectory = AppDomain.CurrentDomain.BaseDirectory; //projenin dosya yolunu alır
+                //C:\Users\90505\source\repos\Academy_MyPortfolio_MVC\Academy_MyPortfolio_MVC
+                var saveLocation = currentDirectory + "CvImages\\Images\\"; //resmin kaydedileceği yer
+                var fileName = Path.Combine(saveLocation, model.ImageFile.FileName);
+                model.ImageFile.SaveAs(fileName);
+                about.ImageUrl = "/CvImages/Images/" + model.ImageFile.FileName;
+            }
+
+            if (model.PdfFile != null)
+            {
+                var currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                var saveLocation = currentDirectory + "CvImages\\CV\\";
+                var fileName = Path.Combine(saveLocation, model.PdfFile.FileName);
+                model.PdfFile.SaveAs(fileName);
+                about.CvUrl = "/CvImages/CV/" + model.PdfFile.FileName;
+            }
+
+            about.Title = model.Title;   
+            about.Description = model.Description;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -52,6 +70,14 @@ namespace Academy_MyPortfolio_MVC.Controllers
         [HttpPost]
         public ActionResult AddAbout(TblAbout model)
         {
+            if(model.ImageFile != null)
+            {
+                var currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                var saveLocation = currentDirectory + "CvImages\\Images\\";
+                var fileName = Path.Combine(saveLocation, model.ImageFile.FileName);
+                model.ImageFile.SaveAs(fileName);
+                model.ImageUrl = "/CvImages/Images/" + model.ImageFile.FileName;
+            }
             db.TblAbouts.Add(model);
             db.SaveChanges();
             return RedirectToAction("Index");

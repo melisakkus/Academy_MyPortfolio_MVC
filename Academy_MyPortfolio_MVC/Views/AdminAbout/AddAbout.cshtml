@@ -11,8 +11,8 @@
 
     @Html.HiddenFor(x => x.AboutId)
 
-    <label><strong>Resim </strong></label>
-    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <label><strong>Resim Yükle </strong></label>
+    <input type="file" name="ImageFile" class="form-control"/>
     <br />
 
     <label><strong>Giriş Başlığı</strong></label>

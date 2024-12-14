@@ -11,10 +11,11 @@
 <form method="post" enctype="multipart/form-data">
 
     <div>
-        <label style="padding-left:10px"><strong>Kullanılan Profil Resmi </strong></label>
-        <br />
         <div class="text-center">
-            <img src="@Model.ImageUrl" style="width:75px;height:100px" alt="Profil Resmi" />
+
+            <label style="padding-left:10px"><strong>Profil Resmi </strong></label>
+            <br />
+            <img src="@Model.ImageUrl" style="width:100px;height:100px" alt="Profil Resmi" />
 
         </div>
     </div>
@@ -22,7 +23,7 @@
 
     <label style="padding-left:10px"><strong>Yeni Profil Resmi Yükleyin </strong></label>
     <div class="text-center">
-        <input type="file" name="ImageFile" />
+        <input type="file" name="ImageFile" class="form-control" />
     </div>
 
     <br />
